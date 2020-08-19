@@ -26,9 +26,9 @@
    
     <link rel="stylesheet" href="./css/style.css" />
     
-    <link rel="stylesheet" href="./css/mediaQuery.css"/>
+    <!-- <link rel="stylesheet" href="./css/mediaQuery.css"/> -->
   </head>
-<body>
+<body class="el">
 
 
 
@@ -43,7 +43,7 @@
         <h3  class="hey">Hey</h3>
         <h3>I'm Jason, a designer from Chicago, IL</h3>
         <br>
-        <h3>I have an <a href="#">insanely cute dog</a></h3>
+        <h3>I have an <a href="#" class="dog">insanely cute dog</a></h3>
     </header>
 <!--  -->
     <!-- Projects -->
@@ -51,7 +51,7 @@
 <!-- <h6 class="projects" href="#work">
     Projects
 </h6> -->
-<div class="work one">
+<a class="work one">
   <!-- <span class="number" > Nº 01</span> -->
     <div class="workImageContainer">
       
@@ -61,10 +61,10 @@
     </div>
     <h3 class="workTitle">Audience Builder</h3>
     <span class="subtitle">TrueData</span>
-</div>
+</a>
 
 
-<div class="work two">
+<a class="work two">
   <!-- <span class="number" > Nº 01</span> -->
     <div class="workImageContainer">
       
@@ -74,32 +74,32 @@
     </div>
     <h3 class="workTitle">Analytics / Data Viz</h3>
     <span class="subtitle">TrueData</span>
-</div>
+  </a>
 
-<div class="work three">
+<a class="work three">
   <!-- <span class="number" > Nº 01</span> -->
     <div class="workImageContainer">
-      
-      <div class="workbg three"></div>
+      <ul>
+      <li class="workbg three"></li>
       <img class="workIMG three" src="./imgs/cmp web header.png"></img>
-
+    </ul>
     </div>
     <h3 class="workTitle">Web Onboarding Platform</h3>
     <span class="subtitle">TrueData's CMP</span>
-</div>
+</a>
 
-<div class="work four">
+<a class="work four">
   <!-- <span class="number" > Nº 01</span> -->
     <div class="workImageContainer">
-      
-      <div class="workbg four"></div>
+      <ul>
+      <li class="workbg four"></li>
+    </ul>
       <img class="workIMG four" src="./imgs/peck header.png"></img>
 
     </div>
     <h3 class="workTitle">PeckPeck -Daily Writing</h3>
     <span class="subtitle">Personal project</span>
-</div>
-
+</a>
 
 
 
@@ -118,4 +118,38 @@
 
 
 </body>
+<script src="./js/anime.min.js"></script>
+<script src="./js/fitty.min.js"></script>
+<script>
+  (function() {
+    var tiltSettings = [
+    {},
+    {
+      movement: {
+        imgWrapper : {
+          translation : {x: 10, y: 10, z: 30},
+          rotation : {x: 0, y: -10, z: 0},
+          reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+        }
+      }
+    }
+
+  ];
+
+    function init() {
+      var idx = 0;
+      [].slice.call(document.querySelectorAll('a.work')).forEach(function(el, pos) { 
+        idx = pos%2 === 0 ? idx+1 : idx;
+        new TiltFx(el, tiltSettings[idx-1]);
+      });
+    }
+
+    // Preload all images.
+    imagesLoaded(document.querySelector('container'), function() {
+      document.body.classList.remove('loading');
+      init();
+    });
+
+  })();
+  </script>
 </html>

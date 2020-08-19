@@ -54,8 +54,15 @@
   }
   a:hover{
     text-decoration: underline;
-
   }
+
+.dog:hover .dog::after{
+  position: relative;
+  top:12px;
+  
+  background-image: url("https://preview.c9users.io/patbrennan/demo-project/launchschool/249/dictionary/images/arrow-right.png")
+}
+
   .hey::after{
 content: "👋";
 padding-left: 12px
@@ -67,12 +74,15 @@ span.number, span.subtitle{
   font-size: var(--font-s);
 color: var(--grey);
 z-index: 4;
+transition: all .32s ease-in-out;
 
 }
 
 
 span.subtitle{
   align-self: end;
+  position: relative;
+  display: block;
 }
 
   body{
@@ -89,6 +99,7 @@ span.subtitle{
       width: calc(100vw - 80px);
 
       flex-direction: column;
+      counter-reset: list-number;
   }
 
   nav{
@@ -135,25 +146,29 @@ span.subtitle{
 /*  */
 /* Work containers */
 /*  */
-div.work.one {
+
+a.work:hover{
+  text-decoration: none;
+}
+a.work.one {
   grid-area: workOne;
 }
-div.work.two {
+a.work.two {
   grid-area: workTwo;
 }
-div.work.three {
+a.work.three {
   grid-area: workThree;
 }
-div.work.four {
+a.work.four {
   grid-area: workFour;
 }
-div.work.five {
+a.work.five {
   grid-area: workFive;
 }
-div.work.six {
+a.work.six {
   grid-area: workSix;
 }
-div.work.seven {
+a.work.seven {
   grid-area: workSeven;
 }
 
@@ -163,7 +178,22 @@ div.work.seven {
 .work{
   margin-left: -24px;
   margin-right: -24px;
+  transition: all .32s ease-in-out;
 }
+
+.work:hover  .workbg{
+   transform: scale(1.05); 
+}
+.work:hover  .workIMG{
+  transform: scale(1.05) translateY(-.5%) translateX(-.5%); 
+  
+}
+.work:hover  .workTitle{
+transform: translateY(24px);
+}
+.work:hover  span.subtitle{
+  transform: translateY(24px);
+  }
 
 .workImageContainer{
   width:calc(100% + 48px);
@@ -188,6 +218,7 @@ div.work.seven {
   box-shadow: var(--shadow);
   border-radius: 1px;
   z-index: 1;
+  transition: all .32s ease-in-out;
 }
 .workbg:before{
   font-family: var(--mono);
@@ -211,10 +242,11 @@ text-align: right;
   height: auto;
   bottom: 0%;
   position: absolute;
-
+  transition: all .32s ease-in-out;
 }
 .workTitle{
   z-index: 3;
+  transition: all .32s ease-in-out;
 }
 
 
