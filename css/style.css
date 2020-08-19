@@ -56,11 +56,42 @@
     text-decoration: underline;
   }
 
-.dog:hover .dog::after{
+  .dog{
+    display: inline-block;
+    position: relative;
+    transition: all .32s ease-in-out;
+    cursor: pointer;
+
+  }
+.dog:after{
+  content:url("/imgs/dog.png");
+  
   position: absolute;
-  top:12px;
-  background-image: url("./img/")
+  top: 24px;
+  right:0px;
+  /* max-width: 400px;
+  max-height: 600px;
+  width: auto;
+  height: auto; */
+
+  opacity: 0;
+  transition: opacity .62s ease-in-out, transform:translateY .62s ease-in-out, transform:scaleY .001s ease-in-out;
+  /* min-width: 400px; */
+  transform: translateY(0px) scaleY(0);
+  transform-origin: top;
 }
+
+.dog:hover:after{
+  top:32px;
+  display: inline-block;
+opacity: 1;
+transform: scaleY(1) ;
+transition: top .62s ease-in-out, opacity .62s ease-in-out, transform .002s ease-in-out;
+;
+}
+
+
+
 
   .hey::after{
 content: "👋";
