@@ -75,7 +75,7 @@
   height: auto; */
 
   opacity: 0;
-  transition: opacity .62s ease-in-out, transform:translateY .62s ease-in-out, transform:scaleY .001s ease-in-out;
+  
   /* min-width: 400px; */
   transform: translateY(0px) scaleY(0);
   transform-origin: top;
@@ -209,6 +209,7 @@ a.work.seven {
   margin-left: -24px;
   margin-right: -24px;
   transition: all .32s ease-in-out;
+  cursor: pointer;
 }
 
 .work:hover  .workbg{
