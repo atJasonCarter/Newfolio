@@ -57,10 +57,9 @@
   }
 
 .dog:hover .dog::after{
-  position: relative;
+  position: absolute;
   top:12px;
-  
-  background-image: url("https://preview.c9users.io/patbrennan/demo-project/launchschool/249/dictionary/images/arrow-right.png")
+  background-image: url("./img/")
 }
 
   .hey::after{
