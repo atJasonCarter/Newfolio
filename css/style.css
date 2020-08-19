@@ -37,6 +37,13 @@
     }
   }
 
+  h1{
+    font-family: var(--italic);
+    font-size: var(--font-xl);
+    line-height: var(--font-line-height);
+    color: var(--color);
+    font-weight: var(--light);
+  }
 
   h2, h3, h4, h5, h6{
     font-family: var(--sans);
@@ -114,6 +121,11 @@ span.subtitle{
   position: relative;
   display: block;
 }
+.subtitle.CS.AB{
+  bottom: -7px;
+  left: 155px;
+ 
+}
 
   body{
       font-family: var(--sans);
@@ -173,6 +185,7 @@ span.subtitle{
   "footer footer footer footer footer footer footer footer footer footer footer footer"
   ;
 }
+
 /*  */
 /* Work containers */
 /*  */
@@ -360,3 +373,10 @@ position: relative;
   }
 
 
+/*  */
+/* Case Study CSS */
+/*  */
+.heroImage{
+  grid-area: heroImage;
+  max-width: 400px;
+}
